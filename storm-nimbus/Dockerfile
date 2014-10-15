@@ -1,5 +1,5 @@
-FROM wurstmeister/storm
-MAINTAINER Wurstmeister
+FROM xiahoufeng/storm
+MAINTAINER xiahoufeng
 
 RUN /usr/bin/config-supervisord.sh nimbus 
 RUN /usr/bin/config-supervisord.sh drpc

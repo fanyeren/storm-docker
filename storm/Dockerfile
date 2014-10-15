@@ -1,6 +1,10 @@
 FROM wurstmeister/base
 
-MAINTAINER Wurstmeister 
+MAINTAINER xiahoufeng
+
+RUN echo "root:test123456" | chpasswd
+ENV http_proxy http://m1-imci-dev00.m1:3128
+ENV https_proxy https://m1-imci-dev00.m1:3128
 
 RUN wget -q -O - http://people.apache.org/~ptgoetz/apache-storm-0.9.3-rc1/apache-storm-0.9.3-rc1.tar.gz | tar -xzf - -C /opt
 ENV STORM_HOME /opt/apache-storm-0.9.3-rc1
