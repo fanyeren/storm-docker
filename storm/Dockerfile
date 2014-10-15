@@ -17,4 +17,6 @@ ADD cluster.xml $STORM_HOME/logback/cluster.xml
 ADD config-supervisord.sh /usr/bin/config-supervisord.sh
 ADD start-supervisor.sh /usr/bin/start-supervisor.sh 
 
+RUN apt-get clean
+
 RUN echo [supervisord] | tee -a /etc/supervisor/supervisord.conf ; echo nodaemon=true | tee -a /etc/supervisor/supervisord.conf
